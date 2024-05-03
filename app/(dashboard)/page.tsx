@@ -1,0 +1,33 @@
+import { CheckIcon } from '@radix-ui/react-icons'
+
+import { ToggleThemeButton } from '@/components/toggle-theme-button'
+
+const Home = () => {
+  const features = [
+    'Next.js 14 App Router',
+    'Redux',
+    'Shadcn UI',
+    'Theme Configuration',
+    "Let's get started",
+  ]
+
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center gap-4">
+      <div className="flex items-center gap-2">
+        <ToggleThemeButton />
+        <span>Toggle Theme</span>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        {features.map((feature, i) => (
+          <div key={i} className="flex items-center gap-2">
+            <CheckIcon className="w-5 h-5 text-green-500" />
+            <h1 className="text-primary">{feature}</h1>
+          </div>
+        ))}
+      </div>
+    </main>
+  )
+}
+
+export default Home
